@@ -9,6 +9,7 @@ Place for documenting stuff about documentation.
 
 ## Youtube
 * https://www.youtube.com/watch?feature=player_embedded&v=oJsUvBQyHBs
+* https://www.youtube.com/watch?v=qrcj7sVuvUA
 
 ## Others
 * https://www.openfoundry.org/tw/foss-programs/9018-sphinx-restructuredtext-

@@ -1,0 +1,93 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{report}
+\usepackage[a4paper]{geometry} 
+%\geometry{landscape}             % 使用橫向
+%\usepackage[parfill]{parskip}    % 每段空一行
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath,amsthm}	% AMS 標準套件
+\usepackage{booktabs}				% 表格線條
+\usepackage{hyperref}				% 使用 \url 等指令
+\usepackage{titlesec, titletoc} 	% 美化章節標題及目錄套件
+\usepackage{minted}					% 程式碼
+\usepackage{tikz}					% 使用 tikz 套件
+
+\graphicspath{{images/}} 			% 設定圖形路徑
+
+
+% === 中文 xeCJK 設定 ===
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont={cwTeX Q Hei Bold}]{cwTeX Q Ming Medium} % 設預設中文字型及預設粗體
+\setCJKfamilyfont{kai}{cwTeX Q Kai Medium}			    % 楷書	      			
+\setCJKfamilyfont{hei}{cwTeX Q Hei Bold}				% 黑體
+\setCJKfamilyfont{ming}{cwTeX Q Ming Medium}			% 明體
+\setCJKfamilyfont{yuan}{cwTeX Q Yuan Medium}			% 圓體
+\setCJKfamilyfont{fsong}{cwTeX Q Fangsong Medium}		% 仿宋體
+
+\newcommand{\kai}[1]{{\CJKfamily{kai}#1}}   	% 用 \kai{使用楷書}
+\newcommand{\hei}[1]{{\CJKfamily{hei}#1}}   	% 用 \hei{使用黑體}
+\newcommand{\ming}[1]{{\CJKfamily{ming}#1}}		% 用 \ming{使用明體}
+\newcommand{\yuan}[1]{{\CJKfamily{yuan}#1}}		% 用 \yuan{使用圓體}
+\newcommand{\fsong}[1]{{\CJKfamily{fsong}#1}}	% 用 \fsong{使用仿宋體}
+
+\setromanfont[Mapping=tex-text, BoldFont={Arial}]{Times} 						% 指定英文字型, 並用 LaTeX 引號
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Arial}	% 指定無描邊字型
+\setmonofont[Scale=MatchLowercase]{Courier} 				% {Andale Mono} 指定等寛字型
+
+
+
+% === 排版設定 ===
+\setlength{\parindent}{0pt}  	% 設定縮排
+\linespread{1.2} 				% 設定行距
+\setlength{\parskip}{15pt} 		% 設定段落間距
+
+
+% === 自訂指令 ===
+\newcommand{\cmd}{\texttt}
+\renewcommand\contentsname{目~錄~}
+\renewcommand\listfigurename{圖~目~錄}
+\renewcommand\listtablename{表~目~錄}
+
+
+% === 目錄標題 (配合 titletoc) ===
+\titlecontents{chapter}
+[0em]
+{}
+{\large\bf{第 \thecontentslabel 章\quad}}
+{}{\titlerule*{.}\contentspage}
+%
+\titlecontents{section}
+[4em]
+{}
+{\thecontentslabel\quad}
+{}{\titlerule*{.} \contentspage}
+
+
+
+% === 章節標題 (配合 titlesec) ===
+\titleformat{\chapter}[display]
+	{\bf\Large}
+	{\filleft 第 \thechapter\ 章}
+	{1ex}
+	{\Huge\titlerule
+	 \vspace{2ex}%
+	 \filright}
+	[\vspace{2ex}%
+	 \titlerule]
+
+\title{\bf{標準手冊2013版}}
+\author{政治大學應用數學系 蔡炎龍}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\chapter{前言}
+\section{圖檔}
+圖檔可以在和本 \verb|.tex| 檔同一資料夾下做一個 \verb|images| 資料夾放裡面。
+
+
+\section{示範}
+
+\end{document}
